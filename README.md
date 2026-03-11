@@ -4,8 +4,8 @@ A hands-on workshop for developers transitioning from Docker Compose to Kubernet
 
 ## Workshop Overview
 
-**Duration:** 8 hours total (two 4-hour sessions)  
-**Format:** Instructor-led with hands-on labs  
+**Duration:** 8 hours total (two 4-hour sessions)
+**Format:** Instructor-led with hands-on labs
 **Prerequisites:** Docker Compose experience, basic terminal usage
 
 ### Part 1: Kubernetes Fundamentals (4 hours)
@@ -37,37 +37,40 @@ compose-to-kubernetes/
 
 ## Getting Started
 
-### Prerequisites
-1. **Podman installed** on your system:
-   - **Windows:** Install [Podman Desktop](https://podman-desktop.io/)
-   - **Linux:** Install via package manager (`dnf install podman` or `apt install podman`)
+### For Workshop Participants
 
-2. **System Requirements:**
-   - 12-16 GB RAM (for nested containers and multi-node clusters)
-   - 20 GB free disk space
-   - CPU with virtualization support
+Follow the detailed setup instructions in [PREREQUISITES.md](PREREQUISITES.md).
 
-3. **Clone this repository:**
+**Prerequisites:**
+1. **Podman or Docker** installed on your system
+2. **System Requirements:** 12-16 GB RAM, 20 GB disk space
+3. **Clone the repository:**
    ```bash
    git clone https://github.com/rfaes/compose-to-kubernetes.git
    cd compose-to-kubernetes
    ```
 
-### Quick Start
-
-Follow the detailed setup instructions in [PREREQUISITES.md](PREREQUISITES.md).
-
-**TL;DR:**
+**Quick Start:**
 ```bash
-# Build the workshop environment (or pull pre-built image)
 cd setup
-podman build -t k8s-workshop-tools .
-
-# Start the workshop environment
 ./start-workshop.sh    # Linux
 # or
-./start-workshop.ps1   # Windows
+.\start-workshop.ps1   # Windows
 ```
+
+### For Contributors
+
+**Dev Container (Recommended):**
+1. Install VS Code + Remote-Containers extension
+2. Clone this repository and open in VS Code
+3. Click "Reopen in Container" when prompted
+4. All tools pre-installed and ready!
+
+**GitHub Codespaces:**
+- Click "Code" → "Codespaces" → "Create codespace on main"
+- Work directly in your browser
+
+**See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed setup options.**
 
 ## Workshop Content
 
@@ -152,7 +155,7 @@ docker exec -it k8s-workshop bash
 
 ## Security
 
-This workshop is designed for **local learning environments only**. 
+This workshop is designed for **local learning environments only**.
 
 For production use, please review our [Security Policy](SECURITY.md) and implement proper security hardening.
 

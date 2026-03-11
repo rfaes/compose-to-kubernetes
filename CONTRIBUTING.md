@@ -129,48 +129,98 @@ We welcome translations to other languages:
 
 ## Development Setup
 
-### Prerequisites
+We provide multiple ways to set up your development environment:
 
+### Option 1: Dev Container (Recommended)
+
+The easiest way to contribute! All tools are pre-installed and configured.
+
+**Prerequisites:**
+- Visual Studio Code with Remote-Containers extension
+- Docker Desktop or Podman Desktop
+
+**Steps:**
+1. Clone the repository
+2. Open in VS Code
+3. Click "Reopen in Container" when prompted
+4. Wait for the container to build (5-10 minutes first time)
+5. Start contributing!
+
+**What's included:**
+- kubectl, helm, kind, k9s, flux
+- Marp CLI for editing slides
+- Markdown linting and validation tools
+- YAML validation
+- All VS Code extensions pre-configured
+
+See [`.devcontainer/README.md`](.devcontainer/README.md) for more details.
+
+### Option 2: GitHub Codespaces
+
+Work directly in your browser:
+1. Click "Code" → "Codespaces" → "Create codespace on main"
+2. Everything is set up automatically
+3. Start contributing immediately
+
+### Option 3: Local Setup
+
+**Prerequisites:**
 - Podman or Docker
 - Git
 - Text editor (VS Code recommended)
+- Node.js (for Marp CLI)
 
-### Local Testing
+**Installation:**
+```bash
+# Clone repository
+git clone https://github.com/rfaes/compose-to-kubernetes.git
+cd compose-to-kubernetes
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/rfaes/compose-to-kubernetes.git
-   cd compose-to-kubernetes
-   ```
+# Install Marp CLI
+npm install -g @marp-team/marp-cli
 
-2. **Start workshop environment**
-   ```bash
-   cd setup
-   ./start-workshop.sh  # Linux
-   # or
-   .\start-workshop.ps1  # Windows
-   ```
+# Install markdown tools
+npm install -g markdownlint-cli markdown-link-check
 
-3. **Test your changes**
-   ```bash
-   # Create kind cluster
-   kind create cluster --config setup/kind/simple.yaml
-   
-   # Test examples
-   kubectl apply -f part-1/03-deployments/examples/
-   
-   # Verify
-   kubectl get all
-   ```
+# Start workshop environment
+cd setup
+./start-workshop.sh  # Linux
+# or
+.\start-workshop.ps1  # Windows
+```
 
-4. **Validate YAML**
-   ```bash
-   # Check syntax
-   kubectl apply --dry-run=client -f your-file.yaml
-   
-   # Validate with kubeval (optional)
-   kubeval your-file.yaml
-   ```
+### Testing Your Changes
+
+**Using Make (recommended):**
+```bash
+make validate       # Validate all YAML
+make test           # Run full test suite
+make lint           # Lint markdown files
+```
+
+**Manual testing:**
+```bash
+# Create kind cluster
+kind create cluster --config setup/kind/simple.yaml
+
+# Test examples
+kubectl apply -f part-1/03-deployments/examples/
+
+# Verify
+kubectl get all
+
+# Validate YAML
+kubectl apply --dry-run=client -f your-file.yaml
+```
+
+**Preview slides:**
+```bash
+# Live preview with hot reload
+marp part-1/slides.md --watch --server
+
+# Export to PDF
+marp part-1/slides.md --pdf
+```
 
 ## Code of Conduct
 
