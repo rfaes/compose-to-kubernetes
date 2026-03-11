@@ -131,15 +131,15 @@ If all these steps complete successfully, you're ready for the workshop! 🎉
 If you want to get a head start, check out these resources:
 
 ### Basics (5-10 minutes)
-- [YAML Basics](../resources/bonus/yaml-basics.md) - If you're rusty on YAML syntax
-- [Networking Fundamentals](../resources/bonus/networking-basics.md) - Refresh on ports, DNS, and basic networking
+- [YAML Basics](resources/bonus/yaml-basics.md) - If you're rusty on YAML syntax
+- [Networking Fundamentals](resources/bonus/networking-basics.md) - Refresh on ports, DNS, and basic networking
 
 ### Kubernetes Context (15-20 minutes)
 - [Official Kubernetes Docs - What is Kubernetes?](https://kubernetes.io/docs/concepts/overview/)
-- [Docker Compose to Kubernetes: Key Differences](../resources/cheatsheets/compose-to-k8s-mapping.md)
+- [Docker Compose to Kubernetes: Key Differences](resources/compose-to-k8s-mapping.md)
 
 ### Tools Overview (Optional)
-- [kubectl Cheatsheet](../resources/cheatsheets/kubectl-cheatsheet.md)
+- [kubectl Cheatsheet](resources/kubectl-cheatsheet.md)
 - [k9s Documentation](https://k9scli.io/)
 
 ## Troubleshooting

@@ -13,6 +13,7 @@ RUN dnf install -y \
     vim \
     bash-completion \
     jq \
+    openssl \
     && dnf clean all
 
 # Configure Podman for nested containers

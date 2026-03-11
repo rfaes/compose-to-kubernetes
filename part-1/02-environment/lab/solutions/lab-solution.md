@@ -305,4 +305,4 @@ kubectl exec test-busybox -- echo hello
 
 **Great job!** You now have a working Kubernetes cluster and know how to interact with it. Let's move on to understanding Pods in depth.
 
-👉 **Next:** [03-pods - Core Kubernetes Resources: Pods](../../03-pods/)
+👉 **Next:** [03-pods - Core Kubernetes Resources: Pods](../../03-pods//README.md)

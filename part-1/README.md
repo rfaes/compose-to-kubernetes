@@ -40,7 +40,7 @@ By the end of Part 1, you will be able to:
 8. **[Namespaces](08-namespaces/)** (20 min)  
    Logical isolation, resource organization, quotas
 
-9. **[kubectl & k9s](09-kubectl/)** (30 min)  
+9. **[kubectl & k9s](09-tools/README.md)** (30 min)  
    Essential commands, troubleshooting, k9s navigation
 
 10. **[Manifests & Best Practices](10-manifests/)** (20 min)  

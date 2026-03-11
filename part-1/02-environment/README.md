@@ -439,7 +439,7 @@ k9s info
 
 Now that your environment is ready, let's dive into Kubernetes resources!
 
-👉 **Next:** [03-pods - Core Kubernetes Resources: Pods](../03-pods/)
+👉 **Next:** [03-pods - Core Kubernetes Resources: Pods](../03-pods//README.md)
 
 ---
 

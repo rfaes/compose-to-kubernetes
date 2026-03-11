@@ -380,7 +380,7 @@ Errors:
 
 - [Official YAML Specification](https://yaml.org/spec/)
 - [Kubernetes API Reference](https://kubernetes.io/docs/reference/kubernetes-api/)
-- [kubectl Cheatsheet](./kubectl-cheatsheet.md)
+- [kubectl Cheatsheet](../kubectl-cheatsheet.md)
 
 ---
 

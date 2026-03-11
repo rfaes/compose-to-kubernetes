@@ -484,7 +484,7 @@ Check the [examples/](examples/) directory for:
 
 Now that we can deploy and scale applications, we need a way for them to communicate.
 
-**Next:** [05-services - Services & Networking](../05-services/)
+**Next:** [05-services - Services & Networking](../05-services//README.md)
 
 ---
 

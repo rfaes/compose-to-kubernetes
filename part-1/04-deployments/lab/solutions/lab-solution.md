@@ -289,4 +289,4 @@ kubectl rollout status deployment/pause-test
 
 Excellent work! You now understand Deployments and can manage production-grade applications.
 
-**Next:** [05-services - Services & Networking](../../05-services/)
+**Next:** [05-services - Services & Networking](../../05-services//README.md)

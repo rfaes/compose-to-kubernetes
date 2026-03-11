@@ -172,4 +172,4 @@ After completing the lab, compare your work with the [solutions/lab-solution.md]
 
 **Time Check:** If you've completed all tasks, you should have spent about 10 minutes. Move on when ready!
 
-👉 **Next:** [03-pods](../../03-pods/)
+👉 **Next:** [03-pods](../../03-pods//README.md)

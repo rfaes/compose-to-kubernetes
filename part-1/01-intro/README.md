@@ -356,7 +356,7 @@ kubectl delete service nginx
 
 Now that you understand the "why" and "what" of Kubernetes, let's get hands-on!
 
- **Next:** [02-environment - Environment Setup & First Steps](../02-environment/)
+ **Next:** [02-environment - Environment Setup & First Steps](../02-environment//README.md)
 
 ---
 

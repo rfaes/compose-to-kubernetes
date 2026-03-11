@@ -500,7 +500,7 @@ Check the [examples/](examples/) directory for:
 
 Now we can deploy and expose applications. Let's configure them!
 
-**Next:** [06-config - Configuration Management](../06-config/)
+**Next:** [06-config - Configuration Management](../06-config//README.md)
 
 ---
 
