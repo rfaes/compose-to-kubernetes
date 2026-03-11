@@ -1,0 +1,76 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y pandoc texlive-xetex fonts-dejavu
+
+      - name: Create output directory
+        run: mkdir -p dist
+
+      - name: Convert Marp slides to HTML
+        run: |
+          find . -name "slides.md" -type f | while read file; do
+            dir=$(dirname "$file" | sed 's|^\./||' | tr '/' '-')
+            output="dist/${dir}-slides.html"
+            echo "Converting $file -> $output"
+            marp "$file" --html --output "$output"
+          done
+
+      - name: Convert regular markdown files to PDF
+        run: |
+          find . -name "*.md" \
+            -not -path "./.github/*" \
+            -not -path "./node_modules/*" \
+            -type f | while read file; do
+            if ! head -5 "$file" | grep -qE '^\s*marp:\s*true'; then
+              name=$(echo "$file" | sed 's|^\./||' | tr '/' '-' | sed 's|\.md$||')
+              output="dist/${name}.pdf"
+              echo "Converting $file -> $output"
+              pandoc "$file" \
+                --from=gfm \
+                --pdf-engine=xelatex \
+                -V geometry:margin=1in \
+                -V mainfont="DejaVu Sans" \
+                -o "$output" \
+                || echo "Warning: could not convert $file"
+            fi
+          done
+
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          artifacts=$(find dist -type f | sort)
+          if [ -z "$artifacts" ]; then
+            echo "No artifacts found in dist/. Skipping release creation."
+            exit 1
+          fi
+          gh release create "${{ github.ref_name }}" \
+            --title "Release ${{ github.ref_name }}" \
+            --generate-notes \
+            $artifacts
