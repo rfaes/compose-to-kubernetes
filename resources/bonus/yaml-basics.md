@@ -304,7 +304,7 @@ metadata:
     app.kubernetes.io/version: "1.0"
     app.kubernetes.io/component: frontend
     app.kubernetes.io/part-of: myproject
-    
+
     # Simple format (also valid)
     app: myapp
     tier: frontend

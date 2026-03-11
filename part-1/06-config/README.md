@@ -414,7 +414,7 @@ Check [examples/](examples/) for sample manifests.
 
 Now we can configure applications. Let's add persistent storage!
 
-**Next:** [07-storage - Storage in Kubernetes](../07-storage//README.md)
+**Next:** [07-storage - Storage in Kubernetes](../07-storage/README.md)
 
 ---
 

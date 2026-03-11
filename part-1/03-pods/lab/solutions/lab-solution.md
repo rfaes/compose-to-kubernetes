@@ -381,4 +381,4 @@ kubectl exec -it test-pod -- /bin/sh
 
 Great job! You now understand Pods and can create, inspect, and manage them effectively.
 
-**Next:** [04-deployments - Deployments & ReplicaSets](../../04-deployments//README.md)
+**Next:** [04-deployments - Deployments & ReplicaSets](../../04-deployments/README.md)

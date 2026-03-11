@@ -462,7 +462,7 @@ Check the [examples/](examples/) directory for:
 
 Pods are great, but they're missing self-healing and scaling. Let's fix that!
 
-👉 **Next:** [04-deployments - Deployments & ReplicaSets](../04-deployments//README.md)
+👉 **Next:** [04-deployments - Deployments & ReplicaSets](../04-deployments/README.md)
 
 ---
 

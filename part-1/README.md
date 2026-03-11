@@ -207,9 +207,9 @@ Use this checklist to track your progress:
 ## Resources
 
 ### Quick References
-- [kubectl Cheatsheet](../resources/cheatsheets/kubectl-cheatsheet.md)
-- [k9s Shortcuts](../resources/cheatsheets/k9s-shortcuts.md)
-- [Compose → K8s Mapping](../resources/cheatsheets/compose-to-k8s-mapping.md)
+- [kubectl Cheatsheet](../resources/kubectl-cheatsheet.md)
+- [k9s Shortcuts](../resources/k9s-shortcuts.md)
+- [Compose → K8s Mapping](../resources/compose-to-k8s-mapping.md)
 
 ### Official Documentation
 - [Kubernetes Docs](https://kubernetes.io/docs/)
