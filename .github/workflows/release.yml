@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Convert markdown files
+        run: |
+          for file in $(git ls-files '*.md' | grep -v '.github/'); do
+            if [ "$(head -n 5 "$file" | grep 'marp: true')" ]; then
+              marp "$file" -o "${file%.md}.html"
+            else
+              pandoc "$file" -o "${file%.md}.pdf"
+            fi
+          done
+
+      - name: Create GitHub Release
+        id: create_release
+        run: |
+          if [ -z "$(ls -A dist 2>/dev/null)" ]; then
+            exit 0
+          else
+            gh release create "v${{ github.run_number }}" dist/*
+          fi
+
+      # Other steps remain unchanged
