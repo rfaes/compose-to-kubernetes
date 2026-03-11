@@ -18,11 +18,21 @@ Master production-ready Kubernetes skills including advanced kubectl usage, debu
 
 ```
 compose-to-kubernetes/
-├── setup/              # Workshop environment setup
-├── part-1/             # Part 1: Kubernetes Fundamentals
-├── part-2/             # Part 2: Advanced Operations (coming soon)
-├── resources/          # Cheatsheets, bonus materials, sample apps
-└── slides/             # Marp presentation files
+├── setup/                    # Workshop environment setup
+│   ├── Dockerfile           # Workshop container image
+│   ├── kind/                # Kubernetes cluster configs
+│   ├── start-workshop.sh    # Linux startup script
+│   └── start-workshop.ps1   # Windows startup script
+├── part-1/                  # Part 1: Kubernetes Fundamentals (11 sections)
+├── part-2/                  # Part 2: Advanced Operations (8 sections)
+├── resources/               # Cheatsheets, bonus materials
+├── docker-compose.yml       # Alternative Docker setup
+├── Makefile                 # Convenient make commands
+├── PREREQUISITES.md         # Detailed setup guide
+├── CONTRIBUTING.md          # Contribution guidelines
+├── CODE_OF_CONDUCT.md       # Community guidelines
+├── SECURITY.md              # Security policy
+└── LICENSE                  # MIT License
 ```
 
 ## Getting Started
@@ -74,17 +84,15 @@ podman build -t k8s-workshop-tools .
 10. Manifests & Best Practices
 11. **Final Lab:** 3-tier application deployment
 
-### [Part 2: Advanced Operations](part-2/) *(Coming Soon)*
-1. Advanced kubectl Techniques
-2. Debugging & Troubleshooting
-3. Application Health & Reliability
-4. Deployment Strategies & Updates
-5. Ingress & Advanced Networking
-6. Package Management with Helm
-7. GitOps with Flux
-8. High Availability & Production Readiness
-9. Security & Best Practices
-10. **Final Lab:** Production-grade deployment
+### [Part 2: Advanced Operations](part-2/)
+1. Ingress Controllers & Advanced Routing
+2. Package Management with Helm
+3. GitOps with Flux CD
+4. Monitoring & Observability (Prometheus, Grafana, Loki)
+5. Advanced Deployment Strategies (Blue/Green, Canary)
+6. Autoscaling (HPA, VPA, KEDA)
+7. Security & RBAC
+8. Multi-Cluster Management
 
 ## Learning Approach
 
@@ -98,24 +106,61 @@ This workshop uses a **progressive, hands-on approach**:
 
 ## What's Included
 
-- Complete workshop materials (theory + practice)
-- Marp slide decks for presentations
-- Pre-configured kind (Kubernetes in Docker) setups
-- Hands-on lab exercises with solutions
-- Kubectl and k9s cheatsheets
-- Bonus materials (YAML basics, networking fundamentals)
-- Troubleshooting guides
+- **Complete Workshop Materials:** Theory, examples, and hands-on labs for all 19 sections
+- **Presentation Slides:** Marp-based slides for Part 1 and Part 2
+- **Workshop Environment:** Dockerfile with all tools (kubectl, kind, k9s, Helm, Flux)
+- **Cluster Configurations:** Three kind setups (simple, multi-node, HA)
+- **Lab Exercises:** Comprehensive labs with step-by-step solutions
+- **Cheatsheets:** kubectl, k9s shortcuts, and compose-to-k8s mapping
+- **Bonus Materials:** YAML basics, networking fundamentals, troubleshooting guides
+- **CI/CD Integration:** GitHub Actions for content validation
+- **Make Commands:** Convenient Makefile for common tasks
 
 ## Contributing
 
-This is a workshop repository. If you find issues or have suggestions:
-1. Open an issue describing the problem
-2. Submit a PR with improvements
-3. Share feedback after completing the workshop
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting:
+- Report issues or suggest improvements
+- Submit pull requests with fixes or enhancements
+- Share feedback after completing the workshop
+- Help translate materials to other languages
+
+All contributors must follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Quick Commands with Make
+
+If you have `make` installed:
+
+```bash
+make build          # Build workshop container
+make start          # Start workshop environment
+make stop           # Stop workshop environment
+make clean          # Clean up everything
+make validate       # Validate all YAML files
+make test           # Run content validation tests
+make shell          # Open shell in workshop container
+make cluster-simple # Create simple kind cluster
+```
+
+## Alternative: Docker Compose
+
+Prefer Docker over Podman?
+
+```bash
+docker-compose up -d
+docker exec -it k8s-workshop bash
+```
+
+## Security
+
+This workshop is designed for **local learning environments only**. 
+
+For production use, please review our [Security Policy](SECURITY.md) and implement proper security hardening.
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) for details
+MIT License - See [LICENSE](LICENSE) for details.
+
+This workshop is free to use, modify, and distribute.
 
 ## Acknowledgments
 
